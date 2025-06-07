@@ -1,0 +1,847 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOD4FdVdUaL3kIGb6Qtfd1S",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/sunghyuncho992/python_programming/blob/main/9%EC%A3%BC%EC%B0%A8%20%EC%88%99%EC%A0%9C_2024130310%20%EC%A1%B0%EC%84%B1%ED%98%84\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 6,
+      "metadata": {
+        "id": "uSoU2lHxmhzc"
+      },
+      "outputs": [],
+      "source": [
+        "number_list = []\n",
+        "number_list.append(1)\n",
+        "number_list.append(2)\n",
+        "number_list.append(3)\n",
+        "number_list.append(4)\n",
+        "number_list.append(5)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "number_list = []\n",
+        "for number in range(1, 6):\n",
+        " number_list.append(number)"
+      ],
+      "metadata": {
+        "id": "vdiCub9CmpF0"
+      },
+      "execution_count": 9,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "number_list = list(range(1,6))"
+      ],
+      "metadata": {
+        "id": "Caj_2b8tm9W1"
+      },
+      "execution_count": 11,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "number_list = [number for number in range(1,6)]\n",
+        "print (number_list)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nKyZCkEynTOS",
+        "outputId": "5392605a-094f-4d5b-e876-a5b71ae8527e"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 2, 3, 4, 5]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "number_list = [number-1 for number in range(1,6)]\n",
+        "print (number_list)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sFkZp5XAnYtJ",
+        "outputId": "fbe78e8e-30e1-4b04-ac41-b4e76757a837"
+      },
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[0, 1, 2, 3, 4]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a_list = [number for number in range(1,6) if number % 2 ==1]\n",
+        "print (a_list)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1352LH9Rncty",
+        "outputId": "ba977969-f0f3-4341-ac98-e3b4cc0f9f92"
+      },
+      "execution_count": 18,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 3, 5]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 두 개의 for\n",
+        "\n",
+        "rows = range(1,4)\n",
+        "cols = range(1,3)\n",
+        "for row in rows:\n",
+        " for col in cols:\n",
+        "  print(row, col)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "x6V4NaN7nwLB",
+        "outputId": "fb420211-ab98-4804-abc3-be572724f493"
+      },
+      "execution_count": 20,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1 1\n",
+            "1 2\n",
+            "2 1\n",
+            "2 2\n",
+            "3 1\n",
+            "3 2\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "rows = range(1,4)\n",
+        "cols = range(1,3)\n",
+        "cells = [(row, col) for row in rows for col in cols]\n",
+        "for cell in cells:\n",
+        "  print(cell)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7H_odVnXoGNg",
+        "outputId": "227fad4a-b552-494d-ad99-fb4a9b8215c5"
+      },
+      "execution_count": 21,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "(1, 1)\n",
+            "(1, 2)\n",
+            "(2, 1)\n",
+            "(2, 2)\n",
+            "(3, 1)\n",
+            "(3, 2)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "[(i,j) for i in range(5) for j in range(i)]"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "uXTheNEXoN4D",
+        "outputId": "423bffe0-e4c7-46ca-f2e2-a80367713a62"
+      },
+      "execution_count": 22,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[(1, 0),\n",
+              " (2, 0),\n",
+              " (2, 1),\n",
+              " (3, 0),\n",
+              " (3, 1),\n",
+              " (3, 2),\n",
+              " (4, 0),\n",
+              " (4, 1),\n",
+              " (4, 2),\n",
+              " (4, 3)]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 22
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# dictionary comprehension\n",
+        "\n",
+        "word = 'letters'\n",
+        "letter_counts = {letter: word.count(letter) for letter in word}\n",
+        "print (letter_counts)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "wShwFhzZoQHA",
+        "outputId": "2dc3e8ee-2c00-4ce7-8e34-4c66d45fcd00"
+      },
+      "execution_count": 26,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'l': 1, 'e': 2, 't': 2, 'r': 1, 's': 1}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "word = 'letters'\n",
+        "letter_counts = {letter: word.count(letter) for letter in set(word)}\n",
+        "print (letter_counts)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4Z4snwLkoe54",
+        "outputId": "528c1658-4d93-4b78-d1a0-8740078c72ac"
+      },
+      "execution_count": 27,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'s': 1, 'l': 1, 't': 2, 'r': 1, 'e': 2}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a_set = {number for number in range(1,6) if number % 3 == 1}\n",
+        "print(a_set)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "CjjEFdEuoxbm",
+        "outputId": "0ecd2575-4739-410f-b23a-49cc877428ca"
+      },
+      "execution_count": 29,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{1, 4}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Functions and code structure\n",
+        "\n",
+        "def function_name(param1, param2):\n",
+        "  value = do_something()\n",
+        "  return value"
+      ],
+      "metadata": {
+        "id": "dZOTmv7wo921"
+      },
+      "execution_count": 32,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def sum(a,b):\n",
+        "  return a+b\n",
+        "\n",
+        "sum(1,2)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2GEQVTnppNYW",
+        "outputId": "b49c1800-b13f-45ec-9de7-ccb9c205cf99"
+      },
+      "execution_count": 38,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "3"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 38
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "sum(1.3, 3.1)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lKWC5_-Kpa9L",
+        "outputId": "75a349d1-d3f3-4cc0-e2bd-3bd96e00968f"
+      },
+      "execution_count": 39,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "4.4"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 39
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "sum('love', 'python')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "id": "NsPwUvHgpmcp",
+        "outputId": "605acd2d-f1fc-4434-953f-10b38bf866c3"
+      },
+      "execution_count": 40,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'lovepython'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 40
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "days = ['Monday', 'Tuesday', 'Wednesday']\n",
+        "fruits = ['banana', 'orange', 'peach']\n",
+        "drinks = ['coffee', 'tea', 'beer']\n",
+        "desserts = ['tiramisu', 'ice cream', 'pie', 'pudding']\n",
+        "\n",
+        "for day, fruit, drink, dessert in zip(days, fruits, drinks, desserts):\n",
+        " print(day, \": drink\", drink, \"- eat\", fruit, \"- enjoy\", dessert)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "zG9_Mkc2poSh",
+        "outputId": "6f71f817-a1c4-4e90-aec6-574e15679077"
+      },
+      "execution_count": 41,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Monday : drink coffee - eat banana - enjoy tiramisu\n",
+            "Tuesday : drink tea - eat orange - enjoy ice cream\n",
+            "Wednesday : drink beer - eat peach - enjoy pie\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "english = 'Monday', 'Tuesday', 'Wednesday'\n",
+        "french = 'Lundi', 'Mardi', 'Mercredi'\n",
+        "list( zip(english, french) )\n",
+        "dict( zip(english, french) )"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "NSeMOSs6DkrU",
+        "outputId": "35b5f592-1872-4e1e-ef78-826f0f1edeea"
+      },
+      "execution_count": 42,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{'Monday': 'Lundi', 'Tuesday': 'Mardi', 'Wednesday': 'Mercredi'}"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 42
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def menu(wine, entree, dessert):\n",
+        " return {'wine': wine, 'entree': entree, 'dessert': dessert}\n",
+        "\n",
+        "menu('chardonnay', 'chicken', 'cake')\n",
+        "{'wine': 'chardonnay', 'entree': 'chicken', 'dessert': 'cake'}"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7aA_v55tDr_I",
+        "outputId": "18f7237f-905b-4dd1-ddc1-e1d502fe380e"
+      },
+      "execution_count": 59,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{'wine': 'chardonnay', 'entree': 'chicken', 'dessert': 'cake'}"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 59
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def menu(wine, entree, dessert):\n",
+        " return {'wine': wine, 'entree': entree, 'dessert': dessert}\n",
+        "\n",
+        " menu(entree='beef', dessert='bagel', wine='bordeaux')\n",
+        " {'dessert':'bagel', 'wine':'bordeaux', 'entree':'beef'}"
+      ],
+      "metadata": {
+        "id": "AUNHPcU8EGhL"
+      },
+      "execution_count": 60,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        " menu('frontenac', dessert='flan', entree='fish')\n",
+        " {'entree': 'fish', 'dessert': 'flan', 'wine': 'frontenac'}"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0HMJezbNEoSX",
+        "outputId": "75386d62-651c-4ca7-fcbc-e6a6f30993db"
+      },
+      "execution_count": 61,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{'entree': 'fish', 'dessert': 'flan', 'wine': 'frontenac'}"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 61
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def menu(wine, entree, dessert='pudding'):\n",
+        "  return {'wine': wine, 'entree': entree, 'dessert': dessert}"
+      ],
+      "metadata": {
+        "id": "t8rUfoF9FOia"
+      },
+      "execution_count": 67,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "menu('chardonnay', 'chicken')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0l3Gbt8yGo92",
+        "outputId": "54400664-633b-41e3-ee43-cee286883a84"
+      },
+      "execution_count": 68,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{'wine': 'chardonnay', 'entree': 'chicken', 'dessert': 'pudding'}"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 68
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "menu('dunkelfelder', 'duck', 'doughnut')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "jwHO0puJHQNa",
+        "outputId": "223736ef-ae79-4f02-a719-e8fe90e3f103"
+      },
+      "execution_count": 69,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{'wine': 'dunkelfelder', 'entree': 'duck', 'dessert': 'doughnut'}"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 69
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def menu(price, wine='chardonnay', entree='chicken', dessert='pudding'):\n",
+        "  return {'price': price, 'wine': wine, 'entree': entree, 'dessert': dessert}"
+      ],
+      "metadata": {
+        "id": "H368rn3UHVjm"
+      },
+      "execution_count": 73,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "menu(100)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "koJtVnh6HYUU",
+        "outputId": "7e40d860-62a9-4224-e421-d325bc7c720a"
+      },
+      "execution_count": 74,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{'price': 100, 'wine': 'chardonnay', 'entree': 'chicken', 'dessert': 'pudding'}"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 74
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "menu(price=100)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pROL2vfGHmk-",
+        "outputId": "93faf7e5-b2cf-4baf-bb26-a8c9a4df86b1"
+      },
+      "execution_count": 75,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{'price': 100, 'wine': 'chardonnay', 'entree': 'chicken', 'dessert': 'pudding'}"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 75
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "menu(price=120, entree='beef')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "TVBAIaynHpCP",
+        "outputId": "d0b5bbe8-2116-475b-f04f-837da06a909c"
+      },
+      "execution_count": 76,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{'price': 120, 'wine': 'chardonnay', 'entree': 'beef', 'dessert': 'pudding'}"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 76
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        " menu(dessert='bagel', price=110)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1zVlgqgZHsyP",
+        "outputId": "fbc18a58-a529-4586-b529-4d81599a3b40"
+      },
+      "execution_count": 78,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{'price': 110, 'wine': 'chardonnay', 'entree': 'chicken', 'dessert': 'bagel'}"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 78
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        " menu('eighty' 'saint-pierre', 'fish')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "c82AMtfiHv0T",
+        "outputId": "1f56d297-d15f-42a3-d6f4-cb83c6640d36"
+      },
+      "execution_count": 79,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{'price': 'eightysaint-pierre',\n",
+              " 'wine': 'fish',\n",
+              " 'entree': 'chicken',\n",
+              " 'dessert': 'pudding'}"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 79
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#docstring\n",
+        "\n",
+        "def echo(anything):\n",
+        "  'echo returns its input argument'\n",
+        "  return anything"
+      ],
+      "metadata": {
+        "id": "MhnJ5YE7H6AV"
+      },
+      "execution_count": 89,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def print_if_true(thing, check):\n",
+        "  if check:\n",
+        "    print(thing)"
+      ],
+      "metadata": {
+        "id": "VVsCCq74IS9X"
+      },
+      "execution_count": 91,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "help(echo)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "LJuj6O9YIdX7",
+        "outputId": "07370613-34d7-4148-e89a-a38eb8a1d94d"
+      },
+      "execution_count": 95,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Help on function echo in module __main__:\n",
+            "\n",
+            "echo(anything)\n",
+            "    echo returns its input argument\n",
+            "\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(echo.__doc__)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "stQV21n1IrrZ",
+        "outputId": "bd03e3f6-0035-42b9-c6e9-8f4690927e1a"
+      },
+      "execution_count": 97,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "echo returns its input argument\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "UJQglk7UI41R"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
